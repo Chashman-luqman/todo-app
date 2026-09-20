@@ -36,7 +36,7 @@ public class TodoApp {
     public static void main(String[] args) throws IOException {
         loadTodos();
 
-        int port = Integer.parseInt(System.getenv().getOrDefault("PORT", "8082"));
+        int port = Integer.parseInt(System.getenv().getOrDefault("PORT", "8083"));
         HttpServer server = HttpServer.create(new InetSocketAddress(port), 0);
 
         server.createContext("/api/todos", TodoApp::handleTodos);
