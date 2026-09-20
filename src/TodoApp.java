@@ -80,7 +80,7 @@ public class TodoApp {
         try {
             int id = readId(ex);
             toggleTodo(id);
-            sendJso======fn(ex, 200, toJson());
+            sendJson(ex, 200, toJson());
         } catch (Exception e) {
             sendJson(ex, 400, "{\"error\":\"Invalid request\"}");
         }
