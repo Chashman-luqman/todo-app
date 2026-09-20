@@ -17,3 +17,5 @@ A simple to-do list app. The backend is written in Java and the web page uses HT
 - `src/TodoApp.java` - the Java server that saves and serves the tasks
 - `public/` - the web page (HTML, CSS and JavaScript)
 - `Dockerfile` - used to deploy the app online
+
+- Live site: https://chashman-luqman.github.io/todo-app/
