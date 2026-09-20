@@ -1,7 +1,14 @@
 # To-Do List App (Java)
 
-A to-do list with a Java backend and an HTML, CSS and JavaScript front end.
+A simple to-do list app. The backend is written in Java and the web page uses HTML, CSS and JavaScript.
 
-Features: add tasks, mark them done, delete them, filter, clear completed.
+## Features
+- Add tasks
+- Mark tasks as done
+- Delete tasks
+- Filter by All, To do and Done
+- Clear all completed tasks
 
-Run locally: run TodoApp.java, then open http://localhost:8080
+## How to run
+1. Run `TodoApp.java`
+2. Open http://localhost:8081 in your browser
