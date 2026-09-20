@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My To-Do List</title>
+  <link rel="stylesheet" href="public/style.css">
+</head>
+<body>
+  <main class="app">
+    <header>
+      <h1>My tasks</h1>
+      <p id="summary" class="summary" aria-live="polite"></p>
+    </header>
+    <form id="add-form" class="add-form" autocomplete="off">
+      <label for="new-task" class="visually-hidden">New task</label>
+      <input id="new-task" type="text" maxlength="200" placeholder="What needs doing?" required>
+      <button type="submit">Add task</button>
+    </form>
+    <nav class="filters" aria-label="Filter tasks">
+      <button type="button" class="filter active" data-filter="all">All</button>
+      <button type="button" class="filter" data-filter="active">To do</button>
+      <button type="button" class="filter" data-filter="done">Done</button>
+    </nav>
+    <ul id="task-list" class="task-list"></ul>
+    <p id="empty" class="empty" hidden></p>
+    <footer>
+      <button type="button" id="clear-done" class="link-button">Clear completed</button>
+    </footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
