@@ -1,0 +1,223 @@
+:root {
+  --paper: #e6ecef;
+  --card: #fbfcfc;
+  --ink: #1b2a41;
+  --muted: #5c6b7a;
+  --line: #cfd8de;
+  --highlight: #ffd23f;
+  --danger: #b83a22;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #121a26;
+    --card: #1b2636;
+    --ink: #edf1f5;
+    --muted: #93a2b3;
+    --line: #2c3a4e;
+    --highlight: #ffd23f;
+    --danger: #ff8a70;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Avenir Next", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.5;
+}
+
+.app {
+  max-width: 34rem;
+  margin: 0 auto;
+  padding: 3rem 1.25rem 4rem;
+}
+
+h1 {
+  margin: 0;
+  font-size: 2.75rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+.summary {
+  margin: 0.4rem 0 1.75rem;
+  color: var(--muted);
+}
+
+/* ---------- Add form ---------- */
+.add-form {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.add-form input {
+  flex: 1;
+  min-width: 0;
+  padding: 0.85rem 1rem;
+  font: inherit;
+  color: inherit;
+  background: var(--card);
+  border: 2px solid var(--line);
+  border-radius: 0.6rem;
+}
+
+.add-form input::placeholder {
+  color: var(--muted);
+}
+
+.add-form button {
+  padding: 0 1.25rem;
+  font: inherit;
+  font-weight: 700;
+  color: #1b2a41;
+  background: var(--highlight);
+  border: 2px solid var(--highlight);
+  border-radius: 0.6rem;
+  cursor: pointer;
+}
+
+.add-form button:hover {
+  filter: brightness(0.94);
+}
+
+/* ---------- Filters ---------- */
+.filters {
+  display: flex;
+  gap: 1.25rem;
+  margin: 1.75rem 0 0.5rem;
+  border-bottom: 2px solid var(--line);
+}
+
+.filter {
+  margin-bottom: -2px;
+  padding: 0.4rem 0;
+  font: inherit;
+  font-weight: 600;
+  color: var(--muted);
+  background: none;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+}
+
+.filter:hover {
+  color: var(--ink);
+}
+
+.filter.active {
+  color: var(--ink);
+  border-bottom-color: var(--ink);
+}
+
+/* ---------- Task list ---------- */
+.task-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.task {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.task input[type="checkbox"] {
+  flex: none;
+  width: 1.4rem;
+  height: 1.4rem;
+  margin: 0;
+  accent-color: var(--ink);
+  cursor: pointer;
+}
+
+.task-text {
+  flex: 1;
+  min-width: 0;
+  overflow-wrap: anywhere;
+  cursor: pointer;
+}
+
+/* The one memorable detail: finished tasks get a highlighter swipe */
+.task.done .task-text {
+  color: var(--muted);
+  background: linear-gradient(transparent 55%, color-mix(in srgb, var(--highlight) 75%, transparent) 55%, color-mix(in srgb, var(--highlight) 75%, transparent) 90%, transparent 90%);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  padding: 0 0.15rem;
+}
+
+.delete {
+  flex: none;
+  width: 2rem;
+  height: 2rem;
+  font-size: 1.4rem;
+  line-height: 1;
+  color: var(--muted);
+  background: none;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.delete:hover {
+  color: var(--danger);
+  background: color-mix(in srgb, var(--danger) 14%, transparent);
+}
+
+.empty {
+  margin: 2rem 0;
+  color: var(--muted);
+  text-align: center;
+}
+
+footer {
+  margin-top: 1.25rem;
+}
+
+.link-button {
+  padding: 0;
+  font: inherit;
+  font-size: 0.95rem;
+  color: var(--muted);
+  text-decoration: underline;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+.link-button:hover {
+  color: var(--danger);
+}
+
+/* ---------- Accessibility ---------- */
+:focus-visible {
+  outline: 3px solid var(--ink);
+  outline-offset: 2px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+@media (max-width: 30rem) {
+  h1 {
+    font-size: 2.25rem;
+  }
+}
