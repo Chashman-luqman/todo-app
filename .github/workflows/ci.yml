@@ -1,0 +1,28 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get the code
+        uses: actions/checkout@v4
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 21
+
+      - name: Build - compile the Java code
+        run: javac src/TodoApp.java
+
+      - name: Test - start the app and check it responds
+        run: |
+          PORT=8080 java -cp src TodoApp &
+          sleep 5
+          curl -f http://localhost:8080/
+          curl -f http://localhost:8080/api/todos
